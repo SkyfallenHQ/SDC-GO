@@ -1,12 +1,21 @@
 package login
 
 import (
-	"fmt"
+	"SkyfallenDeveloperCenter/config_parser"
+	"go.mongodb.org/mongo-driver/bson"
+	"go.mongodb.org/mongo-driver/mongo"
+	"log"
+	"net/http"
 )
 
-func VerifyPassword(username string, password string){
+func AuthenticateUser(w http.ResponseWriter, r *http.Request, database *mongo.Client, cnf config_parser.ConfigStructure){
 
-	fmt.Printf(username)
-	fmt.Printf(password)
+	log.Printf("Handling user authentication...")
+
+	log.Printf("Extracting the session store out of the cookie store")
+
+	SessionStore, _ := CookieStore.Get(r, "SDCSession")
+
+	database.Database("SDC-DB").Collection("Users").InsertOne()
 
 }
