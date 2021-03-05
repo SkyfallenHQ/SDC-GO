@@ -1,3 +1,2 @@
 go build -o build/SDC
-cd ./build
-./SDC
+./build/SDC
