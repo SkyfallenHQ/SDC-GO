@@ -1,19 +1,17 @@
 package config_parser
 
-type config_file struct {
-
-	config []config_json `json:"config"`
-
+type ConfigStructure struct {
+	Contents ConfigCore `json:"configuration"`
 }
 
-type config_json struct {
-
-	database config_database `json:"database"`
-
+type ConfigCore struct {
+	Database string `json:"database"`
+	WebPath string `json:"webPath"`
+	IDP ConfigIDP `json:"idp"`
 }
 
-type config_database struct {
-
-	mongouri string `json:"mongouri"`
-
+type ConfigIDP struct {
+	AuthURL string `json:"authUrl"`
+	ClientID string `json:"clientId"`
+	ClientSecret string `json:"clientSecret"`
 }
