@@ -1,11 +1,11 @@
 {
-  "config": {
-
-    "database": {
-
-      "mongouri": ""
-
-    }
-
+  "configuration": {
+    "database": "",
+    "webPath" : "",
+    "idp": {
+          "authUrl": "",
+          "clientId": "",
+          "clientSecret": ""
+        }
   }
 }
